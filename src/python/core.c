@@ -239,7 +239,9 @@ PyMODINIT_FUNC PyInit_pyetchash(void) {
     PyModule_AddIntConstant(module, "DATASET_BYTES_GROWTH", (long) ETHASH_DATASET_BYTES_GROWTH);
     PyModule_AddIntConstant(module, "CACHE_BYTES_INIT", (long) ETHASH_CACHE_BYTES_INIT);
     PyModule_AddIntConstant(module, "CACHE_BYTES_GROWTH", (long) ETHASH_CACHE_BYTES_GROWTH);
-    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "ECIP1099_BLOCK", (long) ETHASH_ECIP1099_BLOCK);
+    PyModule_AddIntConstant(module, "ECIP1099_EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
     PyModule_AddIntConstant(module, "MIX_BYTES", (long) ETHASH_MIX_BYTES);
     PyModule_AddIntConstant(module, "HASH_BYTES", (long) ETHASH_HASH_BYTES);
     PyModule_AddIntConstant(module, "DATASET_PARENTS", (long) ETHASH_DATASET_PARENTS);
@@ -257,7 +259,9 @@ initpyetchash(void) {
     PyModule_AddIntConstant(module, "DATASET_BYTES_GROWTH", (long) ETHASH_DATASET_BYTES_GROWTH);
     PyModule_AddIntConstant(module, "CACHE_BYTES_INIT", (long) ETHASH_CACHE_BYTES_INIT);
     PyModule_AddIntConstant(module, "CACHE_BYTES_GROWTH", (long) ETHASH_CACHE_BYTES_GROWTH);
-    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "ECIP1099_BLOCK", (long) ETHASH_ECIP1099_BLOCK);
+    PyModule_AddIntConstant(module, "ECIP1099_EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
     PyModule_AddIntConstant(module, "MIX_BYTES", (long) ETHASH_MIX_BYTES);
     PyModule_AddIntConstant(module, "HASH_BYTES", (long) ETHASH_HASH_BYTES);
     PyModule_AddIntConstant(module, "DATASET_PARENTS", (long) ETHASH_DATASET_PARENTS);

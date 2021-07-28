@@ -199,7 +199,7 @@ get_seedhash(PyObject *self, PyObject *args) {
     return Py_BuildValue(PY_STRING_FORMAT, (char *) &seedhash, 32);
 }
 
-static PyMethodDef PyethashMethods[] =
+static PyMethodDef PyetchashMethods[] =
         {
                 {"get_seedhash", get_seedhash, METH_VARARGS,
                         "get_seedhash(block_number)\n\n"
@@ -223,23 +223,23 @@ static PyMethodDef PyethashMethods[] =
         };
 
 #if PY_MAJOR_VERSION >= 3
-static struct PyModuleDef PyethashModule = {
+static struct PyModuleDef PyetchashModule = {
     PyModuleDef_HEAD_INIT,
-    "pyethash",
+    "pyetchash",
     "...",
     -1,
-    PyethashMethods
+    PyetchashMethods
 };
 
-PyMODINIT_FUNC PyInit_pyethash(void) {
-    PyObject *module =  PyModule_Create(&PyethashModule);
+PyMODINIT_FUNC PyInit_pyetchash(void) {
+    PyObject *module =  PyModule_Create(&PyetchashModule);
     // Following Spec: https://github.com/ethereum/wiki/wiki/Ethash#definitions
     PyModule_AddIntConstant(module, "REVISION", (long) ETHASH_REVISION);
     PyModule_AddIntConstant(module, "DATASET_BYTES_INIT", (long) ETHASH_DATASET_BYTES_INIT);
     PyModule_AddIntConstant(module, "DATASET_BYTES_GROWTH", (long) ETHASH_DATASET_BYTES_GROWTH);
     PyModule_AddIntConstant(module, "CACHE_BYTES_INIT", (long) ETHASH_CACHE_BYTES_INIT);
     PyModule_AddIntConstant(module, "CACHE_BYTES_GROWTH", (long) ETHASH_CACHE_BYTES_GROWTH);
-    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
     PyModule_AddIntConstant(module, "MIX_BYTES", (long) ETHASH_MIX_BYTES);
     PyModule_AddIntConstant(module, "HASH_BYTES", (long) ETHASH_HASH_BYTES);
     PyModule_AddIntConstant(module, "DATASET_PARENTS", (long) ETHASH_DATASET_PARENTS);
@@ -249,15 +249,15 @@ PyMODINIT_FUNC PyInit_pyethash(void) {
 }
 #else
 PyMODINIT_FUNC
-initpyethash(void) {
-    PyObject *module = Py_InitModule("pyethash", PyethashMethods);
+initpyetchash(void) {
+    PyObject *module = Py_InitModule("pyetchash", PyetchashMethods);
     // Following Spec: https://github.com/ethereum/wiki/wiki/Ethash#definitions
     PyModule_AddIntConstant(module, "REVISION", (long) ETHASH_REVISION);
     PyModule_AddIntConstant(module, "DATASET_BYTES_INIT", (long) ETHASH_DATASET_BYTES_INIT);
     PyModule_AddIntConstant(module, "DATASET_BYTES_GROWTH", (long) ETHASH_DATASET_BYTES_GROWTH);
     PyModule_AddIntConstant(module, "CACHE_BYTES_INIT", (long) ETHASH_CACHE_BYTES_INIT);
     PyModule_AddIntConstant(module, "CACHE_BYTES_GROWTH", (long) ETHASH_CACHE_BYTES_GROWTH);
-    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_EPOCH_LENGTH);
+    PyModule_AddIntConstant(module, "EPOCH_LENGTH", (long) ETHASH_ECIP1099_EPOCH_LENGTH);
     PyModule_AddIntConstant(module, "MIX_BYTES", (long) ETHASH_MIX_BYTES);
     PyModule_AddIntConstant(module, "HASH_BYTES", (long) ETHASH_HASH_BYTES);
     PyModule_AddIntConstant(module, "DATASET_PARENTS", (long) ETHASH_DATASET_PARENTS);

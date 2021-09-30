@@ -15,3 +15,4 @@ include src/libethash/fnv.h
 include src/libethash/internal.h
 include src/libethash/sha3.h
 include src/libethash/util.h
+include src/libethash/*.h
